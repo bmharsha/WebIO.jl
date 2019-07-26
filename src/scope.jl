@@ -81,7 +81,7 @@ mostly historical reasons.
 """
 scopeid(scope::Scope) = string(objectid(scope))
 
-const global_scope_registry = Dict{String, WeakRef{Scope}}()
+const global_scope_registry = Dict{String, WeakRef}()
 
 function register_scope!(scope::Scope)
     global_scope_registry[scopeid(scope)] = WeakRef(scope)
