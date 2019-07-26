@@ -81,18 +81,17 @@ mostly historical reasons.
 """
 scopeid(scope::Scope) = string(objectid(scope))
 
-const global_scope_registry = Dict{String, Scope}()
+const global_scope_registry = Dict{String, WeakRef{Scope}}()
 
 function register_scope!(scope::Scope)
-    global_scope_registry[scopeid(scope)] = scope
-end
-
-function deregister_scope!(scope::Scope)
-    delete!(global_scope_registry, scopeid(scope))
+    global_scope_registry[scopeid(scope)] = WeakRef(scope)
 end
 
 function lookup_scope(uuid::String)
-    get(global_scope_registry, uuid) do
+    if haskey(global_scope_registry, uuid) &&
+        global_scope_registry[uuid].value !== nothing
+        return global_scope_registry[uuid].value
+    else
         error("Could not find scope $(uuid)")
     end
 end
