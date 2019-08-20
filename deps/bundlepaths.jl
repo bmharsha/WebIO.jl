@@ -13,7 +13,7 @@ const PACKAGES_PATH = normpath(joinpath(@__DIR__, "..", "packages"))
 const BUNDLES_PATH = normpath(joinpath(@__DIR__, "bundles"))
 
 function bundleurl(pkg::String, filename::String)
-    return "https://unpkg.com/@webio/$(pkg)@$(WEBIO_VERSION)/dist/$(filename)"
+    return ENV["JULIA_PKG_SERVER"] * "/binary/WebIO/v0.8.9/$(filename)"
 end
 
 const CORE_BUNDLE_PATH = joinpath(BUNDLES_PATH, "webio.bundle.js")
@@ -34,7 +34,7 @@ const BLINK_BUNDLE_URL = bundleurl("blink-provider", "blink.bundle.js")
 function download_bundle(name::String, path::String, url::String)
     if !isfile(path)
         @info "Downloading WebIO $(name) bundle from unpkg..."
-        download(url, path)
+        BinaryProvider.download(url, path)
     end
 end
 
