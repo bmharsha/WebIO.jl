@@ -19,6 +19,7 @@ FunctionalCollections = "de31a74c-ac4f-5751-b3fd-e18cd04993ca"
 Sockets = "6462fe0b-24de-5631-8697-dd941f90decc"
 Logging = "56ddb016-857b-54e1-b83d-db4d58db5568"
 Requires = "ae029012-a4dd-5104-9daa-d747884805df"
+BinaryProvider = "b99e7846-7c00-51b0-8f62-c81ae34c0232"
 
 [extras]
 Conda = "8f4d0f93-b110-5947-807f-2305c1781a2d"

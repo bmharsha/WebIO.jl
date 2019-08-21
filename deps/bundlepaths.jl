@@ -1,4 +1,5 @@
 using Pkg.TOML
+using BinaryProvider
 
 const WEBIO_VERSION = let
     project_file = normpath(joinpath(@__DIR__, "..", "Project.toml"))
