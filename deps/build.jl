@@ -1,7 +1,5 @@
 using JSON
 
-https://github.com/WebIO/WebIO/releases/download/v0.8.9/webio.bundle.js
-
 download_info = Dict(
     "CORE_BUNDLE_URL" => ("https://github.com/WebIO/WebIO/releases/download/v0.8.9/webio.bundle.js", "49931a0d14ec3f33e91739836539bc9c6f218024f2dd786349b0b38b3cad436510dc0431dcde4c445fa80ff0ff85b06f74effda3df9932184131d32302cce51d"),
     "GENERIC_HTTP_BUNDLE_URL" => ("https://github.com/WebIO/WebIO/releases/download/v0.8.9/generic-http.bundle.js", "f9fd4d2fbd4bcb2bc7b5ef540f6115d3d2dc9859715c60030a68fe37b065cae41421c4ca5204c8e76eb3bad643ff501f3940d9ffc357ef044bed7a3e0a880a51"),
