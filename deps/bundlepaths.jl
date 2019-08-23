@@ -14,7 +14,7 @@ const PACKAGES_PATH = normpath(joinpath(@__DIR__, "..", "packages"))
 const BUNDLES_PATH = normpath(joinpath(@__DIR__, "bundles"))
 
 function bundleurl(pkg::String, filename::String)
-    return ENV["JULIA_PKG_SERVER"] * "/binary/WebIO/v0.8.9/$(filename)"
+    return ENV["JULIA_PKG_SERVER"] * "/binary/WebIO.jl/v0.8.90/$(filename)"
 end
 
 const CORE_BUNDLE_PATH = joinpath(BUNDLES_PATH, "webio.bundle.js")
