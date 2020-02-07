@@ -1,7 +1,7 @@
 name = "WebIO"
 uuid = "0f1e0344-ec1d-5b48-a673-e5cf874b6c29"
 license = "MIT"
-version = "0.8.9"
+version = "0.8.91"
 
 [deps]
 Pkg = "44cfe95a-1eb2-52ea-b672-e2afdf69b78f"
@@ -19,7 +19,6 @@ FunctionalCollections = "de31a74c-ac4f-5751-b3fd-e18cd04993ca"
 Sockets = "6462fe0b-24de-5631-8697-dd941f90decc"
 Logging = "56ddb016-857b-54e1-b83d-db4d58db5568"
 Requires = "ae029012-a4dd-5104-9daa-d747884805df"
-BinaryProvider = "b99e7846-7c00-51b0-8f62-c81ae34c0232"
 
 [extras]
 Conda = "8f4d0f93-b110-5947-807f-2305c1781a2d"
@@ -32,6 +31,9 @@ Blink = "ad839575-38b3-5650-b840-f874b8c74a25"
 NBInclude = "0db19996-df87-5ea3-a455-e3a50d440464"
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 NodeJS = "2bd173c7-0d6d-553b-b6af-13a54713934c"
+
+[compat]
+julia = "1.3"
 
 [targets]
 test = ["Blink", "Conda", "DataStructures", "Dates", "IJulia", "JSExpr", "Mux", "NBInclude", "NodeJS", "Test"]

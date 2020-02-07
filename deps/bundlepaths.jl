@@ -1,5 +1,5 @@
 using Pkg.TOML
-using BinaryProvider
+using Pkg
 
 const WEBIO_VERSION = let
     project_file = normpath(joinpath(@__DIR__, "..", "Project.toml"))
@@ -14,7 +14,7 @@ const PACKAGES_PATH = normpath(joinpath(@__DIR__, "..", "packages"))
 const BUNDLES_PATH = normpath(joinpath(@__DIR__, "bundles"))
 
 function bundleurl(pkg::String, filename::String)
-    return ENV["JULIA_PKG_SERVER"] * "/binary/WebIO.jl/v0.8.90/$(filename)"
+    return Pkg.pkg_server() * "/binary/WebIO.jl/v0.8.90/$(filename)"
 end
 
 const CORE_BUNDLE_PATH = joinpath(BUNDLES_PATH, "webio.bundle.js")
@@ -35,7 +35,7 @@ const BLINK_BUNDLE_URL = bundleurl("blink-provider", "blink.bundle.js")
 function download_bundle(name::String, path::String, url::String)
     if !isfile(path)
         @info "Downloading WebIO $(name) bundle from unpkg..."
-        BinaryProvider.download(url, path)
+        Pkg.PlatformEngines.download(url, path)
     end
 end
 
