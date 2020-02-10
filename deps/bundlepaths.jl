@@ -35,6 +35,7 @@ const BLINK_BUNDLE_URL = bundleurl("blink-provider", "blink.bundle.js")
 function download_bundle(name::String, path::String, url::String)
     if !isfile(path)
         @info "Downloading WebIO $(name) bundle from unpkg..."
+        Pkg.PlatformEngines.probe_platform_engines!()
         Pkg.PlatformEngines.download(url, path)
     end
 end
